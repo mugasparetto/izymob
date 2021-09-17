@@ -10,6 +10,7 @@ import {
   LinksContainer,
   LinkItem,
   Line,
+  MainContainer,
 } from './styles';
 
 interface RouteParams {
@@ -35,7 +36,9 @@ const LoggedArea: React.FC = () => {
         </LinksContainer>
       </NavBarContainer>
 
-      <LoggedRoutes />
+      <MainContainer>
+        <LoggedRoutes />
+      </MainContainer>
     </>
   );
 };

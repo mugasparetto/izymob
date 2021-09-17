@@ -1,0 +1,223 @@
+[
+  {
+    "key": 1,
+    "name": "Yuri",
+    "email": "yuri@email.com",
+    "int_code": "55",
+    "phone": "1191111111",
+    "created_at": "2020-08-20T15:51:33.480Z",
+    "broker_key": 1,
+    "interests": [
+      {
+        "code": "IZM1",
+        "title": "Linda casa de vila no bairro do Tatuapé",
+        "sale_price": "28000000",
+        "type": "CASA_DE_VILA"
+      }
+    ]
+  },
+  {
+    "key": 2,
+    "name": "Vitor",
+    "email": "vitor@email.com",
+    "int_code": "55",
+    "phone": "11922222222",
+    "created_at": "2020-09-10T11:30:00.480Z",
+    "broker_key": 3,
+    "interests": [
+      {
+        "code": "IZM26",
+        "title": "Caverna bem iluminada",
+        "sale_price": "29500000",
+        "type": "CAVERNA"
+      }
+    ]
+  },
+  {
+    "key": 3,
+    "name": "Pedro",
+    "email": "pedro@email.com",
+    "int_code": "55",
+    "phone": "11933333333",
+    "created_at": "2020-08-20T15:51:33.480Z",
+    "broker_key": 4,
+    "interests": [
+      {
+        "code": "IZM35",
+        "title": "Palafita bem localizada em Itaquaquecetuba",
+        "sale_price": "29500000",
+        "type": "PALAFITA"
+      }
+    ]
+  },
+  {
+    "key": 4,
+    "name": "Fernando",
+    "email": "fernando@email.com",
+    "int_code": "55",
+    "phone": "11944444444",
+    "created_at": "2020-08-29T10:21:39.480Z",
+    "broker_key": 2,
+    "interests": [
+      {
+        "code": "IZM19",
+        "title": "Palafita bem localizada em Itaquaquecetuba",
+        "sale_price": "29500000",
+        "type": "PALAFITA"
+      }
+    ]
+  },
+  {
+    "key": 5,
+    "name": "Lucas",
+    "email": "lucas@email.com",
+    "int_code": "55",
+    "phone": "11955551111",
+    "created_at": "2020-07-12T19:14:04.480Z",
+    "broker_key": 1,
+    "interests": [
+      {
+        "code": "IZM6",
+        "title": "Apartamento com 103 quartões na Praça da Sé",
+        "sale_price": "99500000",
+        "type": "APARTAMENTO"
+      }
+    ]
+  },
+  {
+    "key": 6,
+    "name": "Raphael",
+    "email": "raphael@email.com",
+    "int_code": "55",
+    "phone": "11955551111",
+    "created_at": "2020-07-22T14:14:04.480Z",
+    "broker_key": 1,
+    "interests": [
+      {
+        "code": "IZM9",
+        "title": "Casa torta no Jardins",
+        "sale_price": "109500000",
+        "type": "CASA"
+      }
+    ]
+  },
+  {
+    "key": 7,
+    "name": "Maurício",
+    "email": "mauricio@email.com",
+    "int_code": "55",
+    "phone": "11955552222",
+    "created_at": "2020-06-12T10:14:04.480Z",
+    "broker_key": 4,
+    "interests": [
+      {
+        "code": "IZM31",
+        "title": "Casa de árvore no Ibirapuera",
+        "sale_price": "99500000",
+        "type": "CASA"
+      }
+    ]
+  },
+  {
+    "key": 8,
+    "name": "Laurindo",
+    "email": "laurindo@email.com",
+    "int_code": "55",
+    "phone": "11955553333",
+    "created_at": "2020-07-10T12:14:04.480Z",
+    "broker_key": 2,
+    "interests": [
+      {
+        "code": "IZM19",
+        "title": "Palafita bem localizada em Itaquaquecetuba",
+        "sale_price": "29500000",
+        "type": "PALAFITA"
+      }
+    ]
+  },
+  {
+    "key": 9,
+    "name": "Luceia",
+    "email": "luceia@email.com",
+    "int_code": "55",
+    "phone": "11966661111",
+    "created_at": "2020-07-15T12:14:04.480Z",
+    "broker_key": 3,
+    "interests": [
+      {
+        "code": "IZM26",
+        "title": "Caverna bem iluminada",
+        "sale_price": "29500000",
+        "type": "CAVERNA"
+      }
+    ]
+  },
+  {
+    "key": 10,
+    "name": "Karlus",
+    "email": "karlus@email.com",
+    "int_code": "55",
+    "phone": "11966668888",
+    "created_at": "2020-07-15T12:14:04.480Z",
+    "broker_key": 3,
+    "interests": [
+      {
+        "code": "IZM26",
+        "title": "Caverna bem iluminada",
+        "sale_price": "29500000",
+        "type": "CAVERNA"
+      }
+    ]
+  },
+  {
+    "key": 11,
+    "name": "Yanca",
+    "email": "yanca@email.com",
+    "int_code": "55",
+    "phone": "11944447777",
+    "created_at": "2020-08-11T10:14:04.480Z",
+    "broker_key": 4,
+    "interests": [
+      {
+        "code": "IZM31",
+        "title": "Casa de árvore no Ibirapuera",
+        "sale_price": "99500000",
+        "type": "CASA"
+      }
+    ]
+  },
+  {
+    "key": 12,
+    "name": "Paulinho",
+    "email": "pauinho@email.com",
+    "int_code": "55",
+    "phone": "11988887755",
+    "created_at": "2020-08-10T12:14:04.480Z",
+    "broker_key": 2,
+    "interests": [
+      {
+        "code": "IZM19",
+        "title": "Palafita bem localizada em Itaquaquecetuba",
+        "sale_price": "29500000",
+        "type": "PALAFITA"
+      }
+    ]
+  },
+  {
+    "key": 13,
+    "name": "Cristiana",
+    "email": "cristiana@email.com",
+    "int_code": "55",
+    "phone": "11955551111",
+    "created_at": "2020-07-22T14:14:04.480Z",
+    "broker_key": 1,
+    "interests": [
+      {
+        "code": "IZM9",
+        "title": "Casa torta no Jardins",
+        "sale_price": "109500000",
+        "type": "CASA"
+      }
+    ]
+  }
+]

@@ -13,6 +13,10 @@ interface LineProps {
 }
 
 export const NavBarContainer = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
   height: 7.5rem;
   background-color: white;
   padding: 0 1rem;
@@ -22,7 +26,7 @@ export const NavBarContainer = styled.nav`
 
   @media ${mediaQueries.tablet} {
     height: 5.5rem;
-    padding: 0 5rem;
+    padding: 0 2rem;
     align-items: center;
     flex-direction: row;
   }
@@ -90,4 +94,22 @@ export const Line = styled.div<LineProps>`
   }};
 
   transition: 0.25s ease;
+`;
+
+export const MainContainer = styled.main`
+  height: 100%;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media ${mediaQueries.tablet} {
+    max-width: none;
+    margin: 0;
+  }
+
+  @media ${mediaQueries.laptop} {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
 `;

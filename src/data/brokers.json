@@ -1,0 +1,138 @@
+[
+  {
+    "key": 1,
+    "name": "Julião",
+    "email": "juliao@corretor.com",
+    "int_code": "55",
+    "phone": "11999999999",
+    "commissions": [
+      {
+        "value": "98000",
+        "property_code": "IZM1",
+        "date": "2020-09-10T15:51:33.480Z"
+      },
+      {
+        "value": "110000",
+        "property_code": "IZM2",
+        "date": "2020-09-05T15:51:33.480Z"
+      },
+      {
+        "value": "52000",
+        "property_code": "IZM5",
+        "date": "2020-09-04T15:51:33.480Z"
+      },
+      {
+        "value": "54000",
+        "property_code": "IZM6",
+        "date": "2020-08-27T15:51:33.480Z"
+      },
+      {
+        "value": "92200",
+        "property_code": "IZM9",
+        "date": "2020-08-26T12:30:14.480Z"
+      }
+    ]
+  },
+  {
+    "key": 2,
+    "name": "Marilda",
+    "email": "marilda@corretora.com",
+    "int_code": "55",
+    "phone": "11988888888",
+    "commissions": [
+      {
+        "value": "102000",
+        "property_code": "IZM11",
+        "date": "2020-09-12T15:51:33.480Z"
+      },
+      {
+        "value": "100000",
+        "property_code": "IZM12",
+        "date": "2020-09-09T15:51:33.480Z"
+      },
+      {
+        "value": "92000",
+        "property_code": "IZM15",
+        "date": "2020-09-03T15:51:33.480Z"
+      },
+      {
+        "value": "74000",
+        "property_code": "IZM16",
+        "date": "2020-08-25T15:51:33.480Z"
+      },
+      {
+        "value": "52200",
+        "property_code": "IZM19",
+        "date": "2020-08-23T12:30:14.480Z"
+      }
+    ]
+  },
+  {
+    "key": 3,
+    "name": "Josué",
+    "email": "josue@corretor.com",
+    "int_code": "55",
+    "phone": "11977777777",
+    "commissions": [
+      {
+        "value": "520000",
+        "property_code": "IZM21",
+        "date": "2020-09-12T15:51:33.480Z"
+      },
+      {
+        "value": "1100000",
+        "property_code": "IZM22",
+        "date": "2020-09-09T15:51:33.480Z"
+      },
+      {
+        "value": "470000",
+        "property_code": "IZM25",
+        "date": "2020-08-17T15:51:33.480Z"
+      },
+      {
+        "value": "520000",
+        "property_code": "IZM26",
+        "date": "2020-08-20T15:51:33.480Z"
+      },
+      {
+        "value": "520200",
+        "property_code": "IZM29",
+        "date": "2020-08-27T12:30:14.480Z"
+      }
+    ]
+  },
+  {
+    "key": 4,
+    "name": "Luma",
+    "email": "luma@corretora.com",
+    "int_code": "55",
+    "phone": "11966666666",
+    "commissions": [
+      {
+        "value": "61000",
+        "property_code": "IZM31",
+        "date": "2020-09-01T15:51:33.480Z"
+      },
+      {
+        "value": "90000",
+        "property_code": "IZM32",
+        "date": "2020-08-15T15:51:33.480Z"
+      },
+      {
+        "value": "47000",
+        "property_code": "IZM35",
+        "date": "2020-08-22T15:51:33.480Z"
+      },
+      {
+        "value": "58000",
+        "property_code": "IZM36",
+        "date": "2020-08-25T15:51:33.480Z"
+      },
+      {
+        "value": "54300",
+        "property_code": "IZM39",
+        "date": "2020-08-26T12:30:14.480Z"
+      }
+    ]
+  }
+]
