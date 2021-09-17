@@ -24,6 +24,8 @@ export const NavBarContainer = styled.nav`
   align-items: flex-start;
   flex-direction: column;
 
+  border-bottom: 1px solid ${colors.neutral.light};
+
   @media ${mediaQueries.tablet} {
     height: 5.5rem;
     padding: 0 2rem;
