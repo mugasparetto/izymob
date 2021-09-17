@@ -182,7 +182,7 @@ export const InterestType = styled.div`
     }
 
     span {
-      background: ${colors.neutral.light};
+      background: ${colors.neutral.lightWithOpacity};
       width: 100%;
 
       position: absolute;

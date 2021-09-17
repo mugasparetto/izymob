@@ -3,6 +3,7 @@ export const colors = {
     darkest: '#343A40',
     dark: '#868E96',
     light: '#CED4DA',
+    lightWithOpacity: '#CED4DA7F',
     lightest: '#F8F9FA',
     white: 'white',
   },
