@@ -12,10 +12,20 @@ interface SortData {
   state: 'ASC' | 'DESC' | null;
 }
 
+interface SearchOption {
+  value: string;
+  label: string;
+}
+
 interface SortContextData {
   allSortData: SortData[];
   handleChangeSortData: (title: string) => void;
   activeSortData: SortData;
+  searchOptions: SearchOption[];
+  searchOptionSelected: SearchOption;
+  setSearchOptionSelected: React.Dispatch<React.SetStateAction<SearchOption>>;
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const SortContext = createContext<SortContextData>({} as SortContextData);
@@ -26,6 +36,15 @@ export const SortProvider: React.FC = ({ children }) => {
     { id: 'totalComissions', title: 'comissão', state: null },
     { id: 'leadCount', title: 'leads', state: null },
   ]);
+  const [searchValue, setSearchValue] = useState('');
+
+  const searchOptions = [
+    { value: 'name', label: 'Nome' },
+    { value: 'formattedPhone', label: 'Telefone' },
+  ];
+  const [searchOptionSelected, setSearchOptionSelected] = useState(
+    searchOptions[0]
+  );
 
   const handleChangeSortData = useCallback(
     (title: string) => {
@@ -56,14 +75,23 @@ export const SortProvider: React.FC = ({ children }) => {
 
   return (
     <SortContext.Provider
-      value={{ allSortData, handleChangeSortData, activeSortData }}
+      value={{
+        allSortData,
+        handleChangeSortData,
+        activeSortData,
+        searchOptions,
+        searchOptionSelected,
+        setSearchOptionSelected,
+        searchValue,
+        setSearchValue,
+      }}
     >
       {children}
     </SortContext.Provider>
   );
 };
 
-export const useSortData = (): SortContextData => {
+export const useSort = (): SortContextData => {
   const context = useContext(SortContext);
 
   return context;

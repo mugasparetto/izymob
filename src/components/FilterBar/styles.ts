@@ -19,14 +19,14 @@ export const Container = styled.div<ContainerProps>`
   justify-content: center;
   transition: all 0.2s ease;
 
-  div:first-child {
+  .content {
     flex-grow: 1;
     max-width: 26rem;
     position: relative;
+    display: flex;
 
     @media ${mediaQueries.tablet} {
       max-width: 64rem;
-      display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
@@ -70,7 +70,7 @@ export const CloseButton = styled.button`
   background: ${colors.neutral.white};
 `;
 
-export const SortBar = styled.div`
+export const ConfigBar = styled.div`
   flex-grow: 1;
   display: flex;
   align-items: flex-start;

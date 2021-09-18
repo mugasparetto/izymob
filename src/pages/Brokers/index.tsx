@@ -3,7 +3,7 @@ import { FiMail, FiPhone, FiArrowRight } from 'react-icons/fi';
 
 import { colors } from '../../constants/colors';
 import { getFormattedBrokers } from '../../services';
-import { useSortData } from '../../hooks/sort';
+import { useSort } from '../../hooks/sort';
 
 import Link from '../../components/Link';
 import FilterBar from '../../components/FilterBar';
@@ -19,10 +19,10 @@ import {
 const Brokers: React.FC = () => {
   const formattedBrokers = useMemo(() => getFormattedBrokers(), []);
   const [filteredBrokers, setFilteredBrokers] = useState(formattedBrokers);
-  const { activeSortData } = useSortData();
+  const { activeSortData, searchOptionSelected, searchValue } = useSort();
 
   useEffect(() => {
-    const newFilteredBrokers = [...filteredBrokers];
+    const newFilteredBrokers = [...formattedBrokers];
     newFilteredBrokers.sort((a, b) => {
       const { id, state } = activeSortData;
       if (id === 'name') {
@@ -34,8 +34,21 @@ const Brokers: React.FC = () => {
       return state === 'ASC' ? b[id] - a[id] : a[id] - b[id];
     });
 
-    setFilteredBrokers(newFilteredBrokers);
-  }, [activeSortData, activeSortData.state]);
+    const { value } = searchOptionSelected;
+    const searchType = value as 'name' | 'formattedPhone';
+
+    setFilteredBrokers(
+      newFilteredBrokers.filter((broker) =>
+        broker[searchType].toLowerCase().includes(searchValue.toLowerCase())
+      )
+    );
+  }, [
+    activeSortData,
+    activeSortData.state,
+    searchValue,
+    searchOptionSelected,
+    formattedBrokers,
+  ]);
 
   return (
     <>

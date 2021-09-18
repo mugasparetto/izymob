@@ -8,6 +8,7 @@ export const colors = {
     white: 'white',
   },
   primary: '#0080FF',
+  primaryWithOpacity: '#0080FF7F',
   secondary: '#FF0080',
   error: '#FF0C1F',
 };

@@ -4,11 +4,12 @@ import { FiX } from 'react-icons/fi';
 import { colors } from '../../constants/colors';
 import { mediaQueries } from '../../constants/mediaQueries';
 import { useMediaQuery } from '../../hooks/mediaQuery';
-import { useSortData } from '../../hooks/sort';
+import { useSort } from '../../hooks/sort';
 
 import SortButton from '../SortButton';
+import SearchInput from '../SearchInput';
 
-import { Container, ButtonsRow, CloseButton, SortBar } from './styles';
+import { Container, ButtonsRow, CloseButton, ConfigBar } from './styles';
 
 const FilterBar: React.FC = () => {
   const [toggleSort, setToggleSort] = useState(false);
@@ -16,39 +17,42 @@ const FilterBar: React.FC = () => {
   const [showButtonsRow, setShowButtonsRow] = useState(true);
 
   const mobileOnly = !useMediaQuery(`${mediaQueries.tablet}`);
-  const { allSortData, handleChangeSortData } = useSortData();
+  const { allSortData, handleChangeSortData, setSearchValue } = useSort();
 
   const handleSortClick = useCallback(() => {
     setToggleSort(true);
   }, []);
 
+  const handleSearchClick = useCallback(() => {
+    setToggleSearch(true);
+  }, []);
+
   const closeConfigBar = useCallback(() => {
     setToggleSort(false);
     setToggleSearch(false);
-    // setShowButtonsRow(true);
-  }, []);
+    setSearchValue('');
+  }, [setSearchValue]);
 
-  const handleContainerResize = useCallback(() => {
-    setShowButtonsRow((prev) => !prev);
-  }, []);
-
-  const handleButtonsRowFade = useCallback(() => {
-    setShowButtonsRow((prev) => !prev);
+  const handleTransitionEnd = useCallback(({ target }) => {
+    if (target.id === 'container' || target.id === 'buttons-row')
+      setShowButtonsRow((prev) => !prev);
   }, []);
 
   return (
     <Container
       shouldExpand={toggleSort || toggleSearch}
-      onTransitionEnd={handleContainerResize}
+      onTransitionEnd={handleTransitionEnd}
+      id="container"
     >
       {mobileOnly && (
-        <div>
+        <div className="content">
           {showButtonsRow && (
             <ButtonsRow
               shouldHide={toggleSort || toggleSearch}
-              onTransitionEnd={handleButtonsRowFade}
+              onTransitionEnd={handleTransitionEnd}
+              id="buttons-row"
             >
-              <button>Pesquisar</button>
+              <button onClick={handleSearchClick}>Pesquisar</button>
               <button onClick={handleSortClick}>Ordenar</button>
             </ButtonsRow>
           )}
@@ -58,7 +62,7 @@ const FilterBar: React.FC = () => {
             </CloseButton>
           )}
           {!showButtonsRow && toggleSort && (
-            <SortBar>
+            <ConfigBar>
               {allSortData.map((s) => (
                 <SortButton
                   key={s.title}
@@ -66,14 +70,19 @@ const FilterBar: React.FC = () => {
                   onClick={() => handleChangeSortData(s.title)}
                 />
               ))}
-            </SortBar>
+            </ConfigBar>
+          )}
+          {!showButtonsRow && toggleSearch && (
+            <ConfigBar>
+              <SearchInput />
+            </ConfigBar>
           )}
         </div>
       )}
       {!mobileOnly && (
-        <div>
-          <h3>SearchBar</h3>
-          <SortBar>
+        <div className="content">
+          <SearchInput />
+          <ConfigBar>
             {allSortData.map((s) => (
               <SortButton
                 key={s.title}
@@ -81,7 +90,7 @@ const FilterBar: React.FC = () => {
                 onClick={() => handleChangeSortData(s.title)}
               />
             ))}
-          </SortBar>
+          </ConfigBar>
         </div>
       )}
     </Container>
