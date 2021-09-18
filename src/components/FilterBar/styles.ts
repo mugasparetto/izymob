@@ -15,9 +15,23 @@ export const Container = styled.div<ContainerProps>`
   background: ${colors.neutral.white};
   border-bottom: 1px solid ${colors.neutral.light};
 
-  position: relative;
   display: flex;
+  justify-content: center;
   transition: all 0.2s ease;
+
+  div:first-child {
+    flex-grow: 1;
+    max-width: 26rem;
+    position: relative;
+
+    @media ${mediaQueries.tablet} {
+      max-width: 64rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+  }
 `;
 
 export const ButtonsRow = styled.div<ButtonsRowProps>`
@@ -59,6 +73,7 @@ export const CloseButton = styled.button`
 export const SortBar = styled.div`
   flex-grow: 1;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
 
   padding: 2.5rem 1rem 0;
@@ -69,5 +84,11 @@ export const SortBar = styled.div`
     @media ${mediaQueries.mobileM} {
       margin-left: 1rem;
     }
+  }
+
+  @media ${mediaQueries.tablet} {
+    padding: 0;
+    align-items: center;
+    flex-grow: 0;
   }
 `;

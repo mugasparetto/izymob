@@ -42,7 +42,7 @@ const FilterBar: React.FC = () => {
       onTransitionEnd={handleContainerResize}
     >
       {mobileOnly && (
-        <>
+        <div>
           {showButtonsRow && (
             <ButtonsRow
               shouldHide={toggleSort || toggleSearch}
@@ -68,9 +68,22 @@ const FilterBar: React.FC = () => {
               ))}
             </SortBar>
           )}
-        </>
+        </div>
       )}
-      {!mobileOnly && <h1>tabletandabove</h1>}
+      {!mobileOnly && (
+        <div>
+          <h3>SearchBar</h3>
+          <SortBar>
+            {allSortData.map((s) => (
+              <SortButton
+                key={s.title}
+                data={s}
+                onClick={() => handleChangeSortData(s.title)}
+              />
+            ))}
+          </SortBar>
+        </div>
+      )}
     </Container>
   );
 };
