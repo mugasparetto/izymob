@@ -16,49 +16,45 @@ export const NavBarContainer = styled.nav`
   position: sticky;
   top: 0;
   z-index: 999;
+  height: 4rem;
 
-  height: 7.5rem;
   background-color: white;
-  padding: 0 1rem;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  padding: 0 2rem;
+  align-items: center;
+  flex-direction: row;
 
   border-bottom: 1px solid ${colors.neutral.light};
 
   @media ${mediaQueries.tablet} {
-    height: 5.5rem;
-    padding: 0 2rem;
-    align-items: center;
-    flex-direction: row;
+    height: 5rem;
   }
 `;
 
 export const LogoImg = styled.img`
-  height: 2.5rem;
-  margin: 1rem auto 0;
+  height: 2rem;
 
   @media ${mediaQueries.tablet} {
-    margin: 0;
+    height: 2.5rem;
   }
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
-  margin: 1.5rem auto 0;
   height: 100%;
   position: relative;
+  margin-left: 1.5rem;
+  align-self: stretch;
 
   @media ${mediaQueries.tablet} {
-    margin: 0rem;
-    margin-left: 4rem;
-    align-self: stretch;
+    margin-left: 2.5rem;
   }
 `;
 
 export const LinkItem = styled(Link)<LinkProps>`
   width: 5rem;
   display: flex;
+  align-items: center;
   color: ${(props) => (props.selected ? colors.primary : colors.neutral.dark)};
   text-decoration: none;
   font-size: 0.875rem;
@@ -73,10 +69,6 @@ export const LinkItem = styled(Link)<LinkProps>`
       props.selected ? colors.primary : colors.neutral.dark};
   }
   justify-content: center;
-
-  @media ${mediaQueries.tablet} {
-    align-items: center;
-  }
 `;
 
 export const Line = styled.div<LineProps>`

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
+import fullLogo from '../../assets/fullLogo.png';
+import logo from '../../assets/logo.png';
+import { mediaQueries } from '../../constants/mediaQueries';
+
+import { useMediaQuery } from '../../hooks/mediaQuery';
 import LoggedRoutes from '../../routes/LoggedRoutes';
 
-import logoImg from '../../assets/logo.png';
 import {
   NavBarContainer,
   LogoImg,
@@ -20,10 +24,12 @@ interface RouteParams {
 const LoggedArea: React.FC = () => {
   const { id } = useParams() as RouteParams;
 
+  const tabletAndAbove = useMediaQuery(`${mediaQueries.tablet}`);
+
   return (
     <>
       <NavBarContainer>
-        <LogoImg src={logoImg} alt="Izymob" />
+        <LogoImg src={tabletAndAbove ? fullLogo : logo} alt="Izymob" />
 
         <LinksContainer>
           <LinkItem selected={id === 'leads'} to="/leads">
