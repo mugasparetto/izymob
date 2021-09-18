@@ -1,7 +1,9 @@
 import { parseISO, format } from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
+import { cursorTo } from 'readline';
 
 import brokers from '../data/brokers.json';
+import leads from '../data/leads.json';
 
 interface PhoneNumberDTO {
   code: string;
@@ -34,6 +36,15 @@ export const getBrokerData = (brokerKey: number): LeadBroker => {
   };
 };
 
+export const getLeadsCount = (): { [key: number]: number } => {
+  const results = leads.reduce((acc, cur) => {
+    acc[cur.broker_key] = (acc[cur.broker_key] || 0) + 1;
+    return acc;
+  }, {} as { [key: number]: number });
+
+  return results;
+};
+
 export const formatPhoneNumber = ({
   code,
   phoneNumber,
@@ -54,12 +65,11 @@ export const formatCreatedAt = (date: string): string => {
   return formattedDate;
 };
 
-export const formatPrice = (price: string): string => {
-  const number = parseInt(price) / 100;
+export const formatPrice = (price: number): string => {
   const brazilianReais = Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
   });
 
-  return brazilianReais.format(number);
+  return brazilianReais.format(price / 100);
 };

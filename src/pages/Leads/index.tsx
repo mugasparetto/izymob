@@ -2,13 +2,16 @@ import React, { useMemo } from 'react';
 import { FiMail, FiPhone } from 'react-icons/fi';
 
 import leads from '../../data/leads.json';
+import { colors } from '../../constants/colors';
+import Link from '../../components/Link';
+import { typesImages } from '../../constants/typesImages';
+
 import {
   getBrokerData,
   formatPhoneNumber,
   formatCreatedAt,
   formatPrice,
 } from '../../utils';
-import { typesImages } from '../../constants/typesImages';
 
 import {
   LeadCount,
@@ -56,7 +59,7 @@ const Leads: React.FC = () => {
             code,
             title,
             type,
-            formattedPrice: formatPrice(sale_price),
+            formattedPrice: formatPrice(parseInt(sale_price)),
             formattedType: type.replace(/_/g, ' '),
           } as InterestData;
         }
@@ -104,22 +107,25 @@ const Leads: React.FC = () => {
               </TagsContainer>
 
               <LeadInfo>
-                <div>
-                  <h2>{name}</h2>
-                  <span>
-                    <FiMail />
-                    {email}
-                  </span>
-                  <span>
-                    <a
-                      href={`https://wa.me/${fullPhoneNumber}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FiPhone /> {formattedPhone}
-                    </a>
-                  </span>
-                </div>
+                <h2>{name}</h2>
+                <Link
+                  color={colors.neutral.dark}
+                  style={{ textDecoration: 'underline' }}
+                  href={`mailto:${email}`}
+                  iconData={{ position: 'left', Icon: FiMail }}
+                >
+                  {email}
+                </Link>
+                <Link
+                  color={colors.neutral.dark}
+                  style={{ textDecoration: 'underline' }}
+                  href={`https://wa.me/${fullPhoneNumber}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  iconData={{ position: 'left', Icon: FiPhone }}
+                >
+                  {formattedPhone}
+                </Link>
               </LeadInfo>
 
               <InterestsContainer>

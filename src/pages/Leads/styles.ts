@@ -75,35 +75,12 @@ export const LeadInfo = styled.div`
     margin-bottom: 1rem;
   }
 
-  span {
-    display: flex;
-    align-items: center;
-
-    color: ${colors.neutral.dark};
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  span + span {
-    margin-top: 0.5rem;
-  }
-
   a {
-    color: ${colors.primary};
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-
-    svg {
-      color: ${colors.primary};
-    }
+    align-self: flex-start;
   }
 
-  svg {
-    color: ${colors.neutral.darkest};
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
+  a + a {
+    margin-top: 0.5rem;
   }
 `;
 
