@@ -90,20 +90,4 @@ export const Line = styled.div<LineProps>`
   transition: 0.25s ease;
 `;
 
-export const MainContainer = styled.main`
-  height: 100%;
-  width: 100%;
-  max-width: 30rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  @media ${mediaQueries.tablet} {
-    max-width: none;
-    margin: 0;
-  }
-
-  @media ${mediaQueries.laptop} {
-    max-width: 64rem;
-    margin: 0 auto;
-  }
-`;
+export const MainContainer = styled.main``;

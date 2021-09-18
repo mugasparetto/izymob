@@ -8,6 +8,7 @@ import { typesImages } from '../../constants/typesImages';
 import Link from '../../components/Link';
 
 import {
+  Container,
   LeadCount,
   LeadGrid,
   LeadCard,
@@ -23,7 +24,7 @@ const Leads: React.FC = () => {
   const formattedLeads = useMemo(() => getFormattedLeads(), []);
 
   return (
-    <>
+    <Container>
       <LeadCount>{formattedLeads.length} leads cadastrados</LeadCount>
       <LeadGrid>
         {formattedLeads.map(
@@ -96,7 +97,7 @@ const Leads: React.FC = () => {
           )
         )}
       </LeadGrid>
-    </>
+    </Container>
   );
 };
 

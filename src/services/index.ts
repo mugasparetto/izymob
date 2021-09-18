@@ -39,7 +39,8 @@ interface BrokerData {
   email: string;
   fullPhoneNumber: string;
   formattedPhone: string;
-  totalComissions: string;
+  totalComissions: number;
+  formattedTotalComissions: string;
   leadCount: number;
   comissions: ComissionData[];
 }
@@ -126,15 +127,19 @@ export const getFormattedBrokers = (): BrokerData[] => {
       }
     );
 
+    const totalComissions = formattedComissions.reduce(
+      (acc, curr) => acc + parseInt(curr.value),
+      0
+    );
+
     return {
       key: broker.key,
       name: broker.name,
       email: broker.email,
       fullPhoneNumber: broker.int_code + broker.phone,
       leadCount: leadsCount[broker.key],
-      totalComissions: formatPrice(
-        formattedComissions.reduce((acc, curr) => acc + parseInt(curr.value), 0)
-      ),
+      totalComissions,
+      formattedTotalComissions: formatPrice(totalComissions),
       formattedPhone: formatPhoneNumber({
         code: broker.int_code,
         phoneNumber: broker.phone,

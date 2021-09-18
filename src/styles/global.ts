@@ -15,7 +15,7 @@ export default createGlobalStyle`
     --webkit-font-smothing: atialiased;
   }
 
-  body, input {
+  body, input, button {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
   }

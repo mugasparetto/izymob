@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import fullLogo from '../../assets/fullLogo.png';
@@ -23,7 +23,6 @@ interface RouteParams {
 
 const LoggedArea: React.FC = () => {
   const { id } = useParams() as RouteParams;
-
   const tabletAndAbove = useMediaQuery(`${mediaQueries.tablet}`);
 
   return (
