@@ -69,7 +69,7 @@ const SearchSelect: React.FC = () => {
       setSearchOptionSelected(option!);
       setSearchValue('');
     },
-    [setSearchOptionSelected]
+    [setSearchOptionSelected, setSearchValue]
   );
 
   return (

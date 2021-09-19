@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { FiMail, FiPhone, FiArrowRight } from 'react-icons/fi';
 
 import { colors } from '../../constants/colors';
@@ -7,6 +7,7 @@ import { useSort } from '../../hooks/sort';
 
 import Link from '../../components/Link';
 import FilterBar from '../../components/FilterBar';
+import ComissionsModal from '../../components/ComissionsModal';
 
 import {
   Container,
@@ -16,10 +17,31 @@ import {
   BrokerHighlights,
 } from './styles';
 
+interface ShowComissionsData {
+  name: string;
+  comissions: ComissionData[];
+}
+
+interface ComissionData {
+  value: string;
+  formattedValue: string;
+  property_code: string;
+  formattedDate: string;
+}
+
 const Brokers: React.FC = () => {
   const formattedBrokers = useMemo(() => getFormattedBrokers(), []);
   const [filteredBrokers, setFilteredBrokers] = useState(formattedBrokers);
+  const [
+    comissionsToShow,
+    setComissionsToShow,
+  ] = useState<ShowComissionsData | null>(null);
+
   const { activeSortData, searchOptionSelected, searchValue } = useSort();
+
+  const handleCloseModal = useCallback(() => {
+    setComissionsToShow(null);
+  }, []);
 
   useEffect(() => {
     const newFilteredBrokers = [...formattedBrokers];
@@ -64,6 +86,7 @@ const Brokers: React.FC = () => {
               formattedPhone,
               formattedTotalComissions,
               leadCount,
+              comissions,
             }) => (
               <BrokerCard key={key}>
                 <BrokerInfo>
@@ -103,7 +126,7 @@ const Brokers: React.FC = () => {
                 <Link
                   iconData={{ position: 'right', Icon: FiArrowRight }}
                   onClick={() => {
-                    console.log('clique');
+                    setComissionsToShow({ name, comissions });
                   }}
                 >
                   Ver todas comissões
@@ -113,6 +136,7 @@ const Brokers: React.FC = () => {
           )}
         </BrokerGrid>
       </Container>
+      <ComissionsModal closeModal={handleCloseModal} data={comissionsToShow!} />
     </>
   );
 };
