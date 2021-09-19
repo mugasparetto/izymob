@@ -12,7 +12,6 @@ interface SignInCredentials {
 interface AuthContextData {
   user: User;
   signIn(credentials: SignInCredentials): void;
-  signOut(): void;
 }
 
 interface AuthState {
@@ -22,16 +21,14 @@ interface AuthState {
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [data, setData] = useState<AuthState>({
-    user: { email: 'teste' },
-  } as AuthState);
+  const [data, setData] = useState<AuthState>({} as AuthState);
 
-  const signIn = useCallback(({ email, password }) => {}, []);
-
-  const signOut = useCallback(() => {}, []);
+  const signIn = useCallback(({ email, _ }) => {
+    setData({ user: email });
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user: data.user, signIn }}>
       {children}
     </AuthContext.Provider>
   );

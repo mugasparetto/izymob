@@ -69,7 +69,7 @@ const ComissionsModal: React.FC<ComissionsModalProps> = ({
       <ComissionsGrid>
         {data?.comissions.map(
           ({ property_code, formattedDate, formattedValue }) => (
-            <li>
+            <li key={property_code}>
               <span>{property_code}</span>
               <span>{formattedDate}</span>
               <p>

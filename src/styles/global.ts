@@ -11,13 +11,13 @@ export default createGlobalStyle`
 
   body {
     background: ${colors.neutral.lightest};
-    color: ${colors.neutral.darkest};
-    --webkit-font-smothing: atialiased;
   }
 
   body, input, button {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+    color: ${colors.neutral.darkest};
+    --webkit-font-smothing: atialiased;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
