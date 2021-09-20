@@ -7,8 +7,13 @@ import Brokers from '../pages/Brokers';
 const LoggedRoutes: React.FC = () => {
   return (
     <Switch>
-      <ReactRoute path="/leads" component={Leads} />
-      <ReactRoute path="/corretores" component={Brokers} />
+      <ReactRoute path="/leads">
+        <Leads />
+      </ReactRoute>
+
+      <ReactRoute path="/corretores">
+        <Brokers />
+      </ReactRoute>
     </Switch>
   );
 };

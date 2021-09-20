@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { FiMail, FiPhone, FiArrowRight } from 'react-icons/fi';
 
 import { colors } from '../../constants/colors';
@@ -29,54 +29,47 @@ interface ComissionData {
   formattedDate: string;
 }
 
+const formattedBrokers = getFormattedBrokers();
+
 const Brokers: React.FC = () => {
-  const formattedBrokers = useMemo(() => getFormattedBrokers(), []);
-  const [filteredBrokers, setFilteredBrokers] = useState(formattedBrokers);
   const [
     comissionsToShow,
     setComissionsToShow,
   ] = useState<ShowComissionsData | null>(null);
 
-  const { activeSortData, searchOptionSelected, searchValue } = useSort();
+  const { allSortData, searchOptionSelected, searchValue } = useSort();
 
   const handleCloseModal = useCallback(() => {
     setComissionsToShow(null);
   }, []);
 
-  useEffect(() => {
+  const filteredBrokers = useMemo(() => {
     const newFilteredBrokers = [...formattedBrokers];
+
     newFilteredBrokers.sort((a, b) => {
+      const activeSortData = allSortData.find((s) => s.state !== null)!;
       const { id, state } = activeSortData;
       if (id === 'name') {
         return state === 'ASC'
           ? b[id].localeCompare(a[id])
           : a[id].localeCompare(b[id]);
       }
-
       return state === 'ASC' ? b[id] - a[id] : a[id] - b[id];
     });
 
     const { value } = searchOptionSelected;
     const searchType = value as 'name' | 'formattedPhone';
 
-    setFilteredBrokers(
-      newFilteredBrokers.filter((broker) =>
-        broker[searchType].toLowerCase().includes(searchValue.toLowerCase())
-      )
+    return newFilteredBrokers.filter((broker) =>
+      broker[searchType].toLowerCase().includes(searchValue.toLowerCase())
     );
-  }, [
-    activeSortData,
-    activeSortData.state,
-    searchValue,
-    searchOptionSelected,
-    formattedBrokers,
-  ]);
+  }, [allSortData, searchValue, searchOptionSelected]);
 
   return (
     <>
       <FilterBar />
       <Container>
-        <BrokerGrid>
+        <BrokerGrid role="grid">
           {filteredBrokers.map(
             ({
               key,

@@ -26,7 +26,7 @@ const Leads: React.FC = () => {
   return (
     <Container>
       <LeadCount>{formattedLeads.length} leads cadastrados</LeadCount>
-      <LeadGrid>
+      <LeadGrid role="grid">
         {formattedLeads.map(
           ({
             name,
@@ -74,7 +74,7 @@ const Leads: React.FC = () => {
                 <h3>Interesses</h3>
                 {interests.map(
                   ({ title, code, type, formattedPrice, formattedType }) => (
-                    <LeadInterest>
+                    <LeadInterest key={code}>
                       <InterestType>
                         <div>
                           <img src={typesImages[`${type}`]} alt="Lead" />

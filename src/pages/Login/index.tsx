@@ -44,9 +44,8 @@ const Login: React.FC = () => {
         >
           {() => (
             <Form noValidate>
-              <Field
-                name="email"
-                render={({
+              <Field name="email">
+                {({
                   field,
                   form: { touched, errors, setErrors, handleChange },
                 }: FieldProps) => (
@@ -67,11 +66,10 @@ const Login: React.FC = () => {
                     <ErrorMessage name="email" component="span" />
                   </InputGroup>
                 )}
-              />
+              </Field>
 
-              <Field
-                name="password"
-                render={({
+              <Field name="password">
+                {({
                   field,
                   form: { touched, errors, setErrors, handleChange },
                 }: FieldProps) => (
@@ -90,7 +88,7 @@ const Login: React.FC = () => {
                     <ErrorMessage name="password" component="span" />
                   </InputGroup>
                 )}
-              />
+              </Field>
               <button type="submit">ENTRAR</button>
             </Form>
           )}

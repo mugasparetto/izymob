@@ -44,8 +44,6 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
-
 const ComissionsModal: React.FC<ComissionsModalProps> = ({
   closeModal,
   data,
@@ -59,10 +57,11 @@ const ComissionsModal: React.FC<ComissionsModalProps> = ({
       shouldCloseOnOverlayClick
       style={customStyles}
       onRequestClose={closeModal}
+      appElement={document.querySelector('#root') as HTMLElement}
     >
       <Header>
         <h2>{landscapeAndAbove ? data?.name : `Comissões de ${data?.name}`}</h2>
-        <button onClick={closeModal}>
+        <button onClick={closeModal} data-testid="close-modal">
           <FiX size={24} />
         </button>
       </Header>

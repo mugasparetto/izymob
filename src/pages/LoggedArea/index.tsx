@@ -31,12 +31,8 @@ const LoggedArea: React.FC = () => {
         <LogoImg src={tabletAndAbove ? fullLogo : logo} alt="Izymob" />
 
         <LinksContainer>
-          <LinkItem selected={id === 'leads'} to="/leads">
-            Leads
-          </LinkItem>
-          <LinkItem selected={id === 'corretores'} to="/corretores">
-            Corretores
-          </LinkItem>
+          <LinkItem to="/leads">Leads</LinkItem>
+          <LinkItem to="/corretores">Corretores</LinkItem>
           <Line pageId={id} />
         </LinksContainer>
       </NavBarContainer>

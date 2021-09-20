@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useMemo,
-  useState,
-  useContext,
-} from 'react';
+import React, { createContext, useCallback, useState, useContext } from 'react';
 
 interface SortData {
   id: 'name' | 'totalComissions' | 'leadCount';
@@ -20,7 +14,6 @@ interface SearchOption {
 interface SortContextData {
   allSortData: SortData[];
   handleChangeSortData: (title: string) => void;
-  activeSortData: SortData;
   searchOptions: SearchOption[];
   searchOptionSelected: SearchOption;
   setSearchOptionSelected: React.Dispatch<React.SetStateAction<SearchOption>>;
@@ -68,17 +61,11 @@ export const SortProvider: React.FC = ({ children }) => {
     [allSortData]
   );
 
-  const activeSortData = useMemo(
-    () => allSortData.find((s) => s.state !== null)!,
-    [allSortData]
-  );
-
   return (
     <SortContext.Provider
       value={{
         allSortData,
         handleChangeSortData,
-        activeSortData,
         searchOptions,
         searchOptionSelected,
         setSearchOptionSelected,
