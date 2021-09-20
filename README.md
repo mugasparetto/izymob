@@ -21,7 +21,7 @@
 Izymob is a brazilian real estate that has challenged me to develop this simple website, showing some of their data. It consists on a fake sign in page and two tabs: leads and realtors.
 
 ## :link: Deployed version
-Live version can be found at [gobarberapp.com](https://gobarberapp.com/)<br />
+Live version can be found at [bit.ly/izymob](https://bit.ly/izymob)<br />
 It was deployed using [Netlify](https://www.netlify.com/)
 
 ## :hammer_and_wrench: Features
