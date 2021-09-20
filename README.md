@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+<div align="center">
+  <h2>Izymob</h2>
+  <img alt="GitHub" src="https://img.shields.io/badge/license-MIT-green"> <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/mugasparetto/gobarber-api"> <img alt="Code coverage" src="https://img.shields.io/badge/coverage-83.5%25-brightgreen" />
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+------------
 
-## Available Scripts
+<p align="center">
+  <a href="#pencil-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#link-deployed-version">Deployed version</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#hammer_and_wrench-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#space_invader-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#heavy_check_mark-next-steps">Next steps</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#page_facing_up-license">License</a>
+</p>
 
-In the project directory, you can run:
+------------
 
-### `yarn start`
+## :pencil: About
+Izymob is a brazilian real estate that has challenged me to develop this simple website, showing some of their data. It consists on a fake sign in page and two tabs: leads and realtors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## :link: Deployed version
+Live version can be found at [gobarberapp.com](https://gobarberapp.com/)<br />
+It was deployed using [Netlify](https://www.netlify.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## :hammer_and_wrench: Features
+* Full responsive website
+* Sign in validation
+* Tab based navigation
+* Sort realtors either by name, registered leads or total comission
+* Search realtors either by name or phone number
+* See all realtor comissions one-by-one
 
-### `yarn test`
+## :space_invader: Technologies
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled-components](https://styled-components.com/)
+- [React-router](https://reactrouter.com/)
+- And some specific libraries, such as Formik, Yup, among others
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :rocket: Getting started
 
-### `yarn build`
+### Requirements
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Clone the project
+```bash
+$ git clone https://github.com/mugasparetto/izymob.git && cd izymob
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run these commands
+```bash
+# Install the dependencies
+$ yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Run the web client
+$ yarn start
+```
 
-### `yarn eject`
+## :heavy_check_mark: Next steps
+- [ ] Get 100% on test coverage
+- [ ] Random logged user picture
+- [ ] Enhance sort bar animations
+- [ ] Switch from modal to side panel
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :page_facing_up: License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Made with 💜 &nbsp;by Murilo Gasparetto 👋 &nbsp;[Get in touch](https://www.linkedin.com/in/mugasparetto/)
